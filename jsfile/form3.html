@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form using grid</title>
+    <style>
+        .container{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);  
+        }
+        .formlayout{
+            width: 250px;
+           padding: 10px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+        form{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            row-gap: 5px;
+        }
+        label{
+            grid-column-start: 1;
+            grid-column-end: 2;
+            font-size: 20px;
+        }
+        input{
+            grid-column-start: 2;
+            grid-column-end: 3;
+            height: 20px;
+        }
+        textarea{
+            resize: none;
+        }
+        button{
+            width: 60px;
+            height: 20px;
+           justify-self: flex-end;
+           border: none;
+            border-radius:5px ;  
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="formlayout">
+            <form action="">
+                <label for="Name">
+                    Name
+                </label>
+                    <input  type="text" id="Name" name="name" placeholder="First name" pattern="*[A-Za-z]" required>
+                    <input type="text" id="lName" name="lname" placeholder="Last name" pattern="*[A-Za-z]" required>
+                
+                <br>
+                <label for="email">
+                    Email
+                </label>
+                    <input type="email" id="email" name="email" required>
+                
+                <br>
+                <label for="comment">
+                    Massage
+                </label>
+                    <textarea id="comment" name="comment" rows="6" cols="30"></textarea>
+               
+                <br>
+                <button type="submit">send</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
